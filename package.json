@@ -1,0 +1,34 @@
+{
+  "name": "skyzonewx",
+  "version": "1.0.0",
+  "description": "Node.js weather app using WeatherAPI and Mapbox (Express + HBS).",
+  "keywords": [
+    "weather",
+    "nodejs",
+    "express",
+    "hbs",
+    "mapbox",
+    "weatherapi",
+    "weatherzone"
+  ],
+  "homepage": "https://github.com/Wahab-Al/SkyZoneWX#readme",
+  "bugs": {
+    "url": "https://github.com/Wahab-Al/SkyZoneWX/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wahab-Al/SkyZoneWX.git"
+  },
+  "license": "MIT",
+  "author": "Wahab",
+  "type": "commonjs",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "hbs": "^4.2.0",
+    "nodemon": "^3.1.11"
+  }
+}
