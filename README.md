@@ -38,10 +38,13 @@ Receive detailed weather information instantly.
 MIT License
 
 ## Installation: 💾
+```bash
 git clone https://github.com/Wahab-Al/SkyZoneWX.git
 
+## Navigate to the project directory: 📂
 cd SkyZoneWX
 
+## Run the application: ▶️
 npm install
 
-npm start
+node src/app.js
