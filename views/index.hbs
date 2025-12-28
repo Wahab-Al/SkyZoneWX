@@ -7,10 +7,48 @@
         {{!-- BOOTSTRAP --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         {{!-- /BOOTSTRAP --}}
+    {{!-- /external links:  --}}
+    {{!-- internal links:  --}}
+        {{!-- STYLE --}}
+        <link rel="stylesheet" href="public/css/home.css">
+        {{!-- /STYLE --}}
+
         <title>SkyZoneWX</title>
     </head>
     <body>
-        
+        <header><h1>{{>header}}</h1></header>
+        <div class="container mt-5 mb-5">
+            {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>
+            {{else}}
+                <div class="top row d-md-flex justify-content-around align-items-center h-50 mt-4 mb-4 ms-3 me-3">
+                    {{#each fetchedWeatherData}}
+                        {{#if (lt @index 2)}}
+                            <div class="windows col-12 col-md-4 border border-1 shadow h-100 rounded rounded-2 pt-4">
+                                <div class="text-center icon"><img src="{{this.weatherIcon}}" alt="icon"></div>
+                                <div class="infos">
+                                    <div class="text-center city"><h4>{{this.cityName}}</h4></div>
+                                    <div class="text-center temp"><h6>{{this.temperatureCelsius}} ْ</h6></div>
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            <div class="down row d-md-flex justify-content-around align-items-center h-50 mt-4 mb-4 ms-3 me-3">
+                {{#each fetchedWeatherData}}
+                    {{#if (gte @index 2)}}
+                        <div class="windows col-12 col-md-4 border border-1 shadow h-100 rounded rounded-2 pt-4">
+                            <div class="text-center icon"><img src="{{this.weatherIcon}}" alt="icon"></div>
+                            <div class="infos">
+                                <div class="text-center city"><h4>{{this.cityName}}</h4></div>
+                                <div class="text-center temp"><h6>{{this.temperatureCelsius}} ْ</h6></div>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
     {{!-- external scripts:  --}}
         {{!-- BOOTSTRAP --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

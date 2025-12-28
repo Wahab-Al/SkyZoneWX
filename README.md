@@ -44,4 +44,4 @@ cd SkyZoneWX
 
 npm install
 
-npm start
+node src/app.js

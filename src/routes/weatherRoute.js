@@ -1,14 +1,12 @@
-
+//#region Imports:
 const express = require('express')
+const router = express.Router()
+const weatherController = require('../controllers/weatherController')
+//#endregion
 
-const app = express()
+//#region Home Page Router:
+router.get('/', weatherController.renderHomePage)
+//#endregion
 
-const port = process.env.PORT || 5000
 
-app.set('view engine', 'hbs')
-
-app.get('/', (request, response)=>{
-    response.render('index', {
-        // TO BE CONTINUE ...
-    })
-})
+module.exports = router

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=Story+Script&display=swap');
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   text-decoration: none;
+}
+
+/* html{
+   height: 100vh;
+} */
+
+body{
+   height: 100vh !important;
+   font-family: "Mozilla Text", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 500;
+   font-style: normal;
+}
+
+.container{
+   height: 700px !important;
+}
+
+@media (max-width: 767px) {
+   .windows {
+      height: 160px !important;
+      display: flex;
+   }
+   .icon{
+      margin-left: 0 !important;
+      text-align: start !important;
+      width: 60% !important;
+   }
+
+   .city {
+      padding-top: 20% !important;
+      text-align: start !important;
+   }
+
+   .temp {
+      text-align: start !important;
+      margin-bottom: 40% !important;
+   }
+
+   .infos {
+      width: 40% !important;
+      padding-right: 15px !important;
+      align-items: center !important;
+   }
+
+}
+
+.icon, .city, .tem {
+   height: 100px !important;
+}
+
+.icon{
+   margin: auto;
+}
