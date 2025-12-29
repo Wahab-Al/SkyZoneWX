@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const weatherRouter = require('../src/routes/weatherRoute')
+const searchedLocationRouter = require('../src/routes/weatherOfSearchedLocationRoute')
 //#endregion
 
 const port = process.env.PORT || 5000
@@ -23,7 +24,10 @@ hbs.registerHelper('lt', (a, b) => a < b);
 hbs.registerHelper('gte', (a, b) => a >= b);
 //#endregion
 
+//#region main project routes:
 app.use('/', weatherRouter);
+app.use('/searchLocation', searchedLocationRouter)
+//#endregion
 
 //#region 404 BAD REQUEST:
    app.use((req, res) => {
@@ -31,9 +35,10 @@ app.use('/', weatherRouter);
    })
 //#endregion
 
-
+//#region server starts on specified port:
 app.listen(port, ()=>{
    console.log('====================================');
    console.log(`🔥 Server running on port ${port}`)
    console.log('====================================');
 })
+//#endregion

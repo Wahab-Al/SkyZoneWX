@@ -7,7 +7,7 @@ const cities = ['Damascus','Berlin','New York','Sydney']
 
 const renderHomePage = async (request, response)=>{
   try {
-    const fetchWeatherInfosOfCities = cities.map( async city => {
+    const fetchWeatherInfosOfCities = cities.map(async city => {
       try {
         return await getWeatherInofs(city)
       } catch (error) {
@@ -19,7 +19,7 @@ const renderHomePage = async (request, response)=>{
     const fetchedWeatherData = await Promise.all(fetchWeatherInfosOfCities)
 
     response.render('index', { 
-      title:'Sky Zone XW',
+      title:'Sky Zone XW🌤️🌍',
       fetchedWeatherData 
     })
   } catch (error) {

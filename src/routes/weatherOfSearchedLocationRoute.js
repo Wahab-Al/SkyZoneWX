@@ -1,30 +1,11 @@
+//#region Imports:
 const express = require('express')
-const app = express()
-const port = process.env.PORT || 5000
-
-//#region TO USE THE STATIC FILES AS STYLE.CSS 
-   const path = require('path')
-   app.use('/public', express.static(path.join(__dirname, '../../public')))
+const router = express.Router()
+const searchedLoctionController = require('../controllers/searchedLocationController')
 //#endregion
 
-//#region TO DEFINED DYNAMIC PAGES:
-app.set('view engine', 'hbs')
+//#region searched location router:
+router.get('/', searchedLoctionController.renderSearchedLoction)
 //#endregion
 
-//#region ROUTES:
-app.get('/search', (request, response)=>{
-   response.render('weatherOfSearchedLocation', {
-      // TO BE CONTINUE ...
-   })
-})
-//#endregion
-
-
-
-
-
-app.listen(port, ()=>{
-   console.log('====================================');
-   console.log(`🔥 Server running on port ${port}`)
-   console.log('====================================');
-})
+module.exports = router

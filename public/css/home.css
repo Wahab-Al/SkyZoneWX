@@ -1,14 +1,13 @@
+/* TODO: write comments */
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=Story+Script&display=swap');
 *{
    box-sizing: border-box;
    padding: 0;
    margin: 0;
    text-decoration: none;
+   z-index: 3;
 }
-
-/* html{
-   height: 100vh;
-} */
 
 body{
    height: 100vh !important;
@@ -16,17 +15,145 @@ body{
    font-optical-sizing: auto;
    font-weight: 500;
    font-style: normal;
+   background: url('../img/searchContainerImg.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
 }
 
 .container{
-   height: 700px !important;
+   height: 600px !important;
+}
+
+.title {
+   color: maroon !important;
+   font-size: larger !important;
+   font-weight: bolder !important;
+}
+
+.title:hover {
+   cursor: pointer !important;
+}
+
+.icon, .city, .tem {
+   height: 100px !important;
+}
+
+.icon{
+   margin: auto;
+}
+
+nav button {
+   width: 150px;
+   height: 50px;
+}
+
+.searchContainer, .loadingSpinner {
+   margin-top: 120px !important;
+   padding-bottom: 40px !important;
+   border: 1px solid #1111;
+   box-shadow: 1px 1px 17px #111111;
+}
+/* FIXME: UI updating */
+.loadingSpinner div, .loadingSpinner h4  {
+   margin-top: 10% !important;
+}
+
+.searchTitleContainer {
+   margin: auto;
+   width: 90%;
+   background:  
+      linear-gradient(to bottom, #000000, #333333),
+      linear-gradient(to right, #000000, #222222),
+      linear-gradient(to bottom right, #000000, #444444),
+      linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+      radial-gradient(circle, #000000, #111111),
+      linear-gradient(to bottom, #000000, #111111, #222222, #333333);
+}
+
+.searchInp{
+   outline: unset;
+   border: none;
+   border-radius: 7px;
+   width: 75%;
+   padding: 7px;
+   margin: 5px;
+   box-shadow: 1px 1px 12px #ddd;
+}
+
+.searchBtn {
+   margin-right: 5px;
+}
+
+.locationInfos {
+   margin: auto !important;
+   height: 55%;
+   width: 55%;
+}
+
+.locationInfos div {
+   height: 25%;
+   width: 90%;
+   border: 1px solid #74d2fd !important;
+   padding-left: 10px;
+   border-radius: 7px;
+   background:  
+      linear-gradient(to bottom, #000000, #333333),
+      linear-gradient(to right, #000000, #222222),
+      linear-gradient(to bottom right, #000000, #444444),
+      linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+      radial-gradient(circle, #000000, #111111),
+      linear-gradient(to bottom, #000000, #111111, #222222, #333333);
+}
+
+.infoSpan {
+   color: rgb(201, 90, 11);
+}
+
+.windows {
+   color: azure !important;
+   position: relative;
+   z-index: 1;
+   border: 1px solid #74d2fd !important;
+   border-radius: 27px;
+   box-shadow: 1px 1px 11px #c0ddeb;
+}
+
+.windows::after{
+   content: '';
+   position: absolute;
+   z-index: 2;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   background-color: #201d1d98;
+   border-radius: 27px;
+}
+
+.windows div {
+   position: relative;
+   z-index: 3;
 }
 
 @media (max-width: 767px) {
    .windows {
       height: 160px !important;
       display: flex;
+      margin-bottom: 20px !important;
    }
+
+   .windowsContainer {
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      justify-content: center;
+   }
+
+   .top, .down {
+      margin-bottom: 40px !important;
+   }
+
    .icon{
       margin-left: 0 !important;
       text-align: start !important;
@@ -48,13 +175,37 @@ body{
       padding-right: 15px !important;
       align-items: center !important;
    }
+   
+   .city h4 {
+      font-size: .9rem;
+   }
+
+   .temp h6 {
+      font-size: .8rem;
+   }
+
+   .title {
+      font-size: medium !important;
+   }
+
+   nav button {
+      width: 70px;
+      height: 40px;
+   }
+
+   .title-container {
+      margin-top: 10px;
+   }
+
+   .locationInfos {
+      height: 40%;
+      width: 90%;
+   }
+
+   .locationInfos div {
+      width: 100%;
+   }
 
 }
 
-.icon, .city, .tem {
-   height: 100px !important;
-}
 
-.icon{
-   margin: auto;
-}

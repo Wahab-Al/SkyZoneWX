@@ -16,9 +16,9 @@
         <title>SkyZoneWX</title>
     </head>
     <body>
-        <nav>
-          <h1 class="text-center p-3">{{title}}</h1>
-          <button class="btn btn-outlin-green"></button>
+        <nav class="navbar nav-bar d-flex justify-content-around align-item-center bg-transparent shadow">
+            <div class="title-container"><h1 id="title" class="title text-center p-3">{{title}}</h1></div>
+            <div class="p-3" id="getInfos"><button class="btn btn-outline-info text-dark m-auto p-2">search</button></div>
         </nav>
     {{!-- external scripts:  --}}
         {{!-- BOOTSTRAP --}}
@@ -27,5 +27,9 @@
         {{!-- SWEETALERT2 --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         {{!-- /SWEETALERT2 --}}
+    {{!-- /external scripts: --}}
+    {{!-- internal scripts:  --}}
+        <script src="../public/js/searchInfosLogic.js"></script>
+    {{!-- /internal scripts:  --}}
     </body>
 </html>

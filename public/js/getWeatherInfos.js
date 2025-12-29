@@ -33,7 +33,9 @@ const getWeatherInofs = async(city) =>{
       cityName: responseFromWeatherApi.data.location.name,
       temperatureCelsius : responseFromWeatherApi.data.current.temp_c,
       weatherCondition: responseFromWeatherApi.data.current.condition.text,
-      weatherIcon: responseFromWeatherApi.data.current.condition.icon
+      weatherIcon: responseFromWeatherApi.data.current.condition.icon,
+      latitude: responseFromWeatherApi.data.location.lat,
+      longitude: responseFromWeatherApi.data.location.lon,
     }
     //#endregion
 
