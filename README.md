@@ -10,6 +10,9 @@ is a Node.js project that allows users to get current weather information for an
 [![SweetAlert2](https://img.shields.io/badge/SweetAlert2-JS%20popup%20library-purple?style=flat-square)](https://sweetalert2.github.io/)
 
 ---
+## 🚀 Live Demo 
+#### [🌐Explore Live Site](https://skyzonewx.onrender.com/)
+---
 
 ## Features: ✨
 Users can input a city or country and receive real-time weather data.
