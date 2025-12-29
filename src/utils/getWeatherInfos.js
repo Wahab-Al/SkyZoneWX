@@ -1,5 +1,5 @@
 //#region Imports & Api keys
-const { geocodeToken, forecastKey } = require('../../src/utils/apis/weatherapis')
+const { MAPBOX_TOKEN, WEATHER_KEY } = require('./apis/weatherapis')
 const axios = require('axios')
 //#endregion
 
@@ -7,7 +7,7 @@ const getWeatherInofs = async(city) =>{
   try {
     // url:
     const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-      city)}.json?access_token=${geocodeToken}`
+      city)}.json?access_token=${MAPBOX_TOKEN}`
       const response = await axios.get(geocodeUrl)
 
       //#region handle errors:
@@ -19,7 +19,7 @@ const getWeatherInofs = async(city) =>{
       const [longitude, latitude] = response.data.features[0].center
 
       // url:
-      const weatherapiUrl = `https://api.weatherapi.com/v1/current.json?key=${forecastKey}&q=${latitude},${longitude}`
+      const weatherapiUrl = `https://api.weatherapi.com/v1/current.json?key=${WEATHER_KEY}&q=${latitude},${longitude}`
       const responseFromWeatherApi = await axios.get(weatherapiUrl)
 
     //#region handle errors: 

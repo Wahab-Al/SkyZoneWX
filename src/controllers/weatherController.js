@@ -1,5 +1,5 @@
 //#region Imports:
-const getWeatherInofs = require('../../public/js/getWeatherInfos')
+const getWeatherInofs = require('../utils/getWeatherInfos')
 //#endregion
 
 // Main cities:
@@ -11,7 +11,7 @@ const renderHomePage = async (request, response)=>{
       try {
         return await getWeatherInofs(city)
       } catch (error) {
-        return { cityName: city, error: err.message }
+        return { cityName: city, error: error.message }
       }
     })
 

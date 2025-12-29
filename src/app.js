@@ -29,6 +29,7 @@ app.use('/', weatherRouter);
 app.use('/searchLocation', searchedLocationRouter)
 //#endregion
 
+//TODO: CERATE 404 NOT FOUND PAGE 
 //#region 404 BAD REQUEST:
    app.use((req, res) => {
       res.status(404).send('<h1>❌ 404 called page not found..</h1>', { url: req.originalUrl })

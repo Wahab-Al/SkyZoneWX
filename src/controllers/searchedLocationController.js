@@ -1,5 +1,5 @@
 
-const getWeatherInfos = require('../../public/js/getWeatherInfos')
+const getWeatherInfos = require('../utils/getWeatherInfos')
 
 
 const renderSearchedLoction = async (request, response) =>{
