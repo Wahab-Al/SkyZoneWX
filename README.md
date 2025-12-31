@@ -8,10 +8,18 @@ is a Node.js project that allows users to get current weather information for an
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![SweetAlert2](https://img.shields.io/badge/SweetAlert2-JS%20popup%20library-purple?style=flat-square)](https://sweetalert2.github.io/)
+[![Docker](https://img.shields.io/badge/Docker-Container%20Platform-blue?style=flat-square&logo=docker)](https://www.docker.com/)
 
 ---
 ## 🚀 Live Demo 
 #### [🌐Explore Live Site](https://skyzonewx.onrender.com/)
+---
+
+---
+## Quick Start with Docker Hub: 🐳📦
+docker pull wahab7/sky_zone_wx:v1 
+#### Note: to run this project instantly without local setting, use following command:
+  docker run -p 5000:5000 -e WEATHER_KEY=YOUR WEATHER_KEY -e MAPBOX_TOKEN=YOUR_MAPBOX_TOKEN wahab7/sky_zone_wx:v1
 ---
 
 ## Features: ✨
