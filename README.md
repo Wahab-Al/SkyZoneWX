@@ -43,6 +43,12 @@ Enter a city or country in the search bar.
 Receive detailed weather information instantly.
 
 ## Screenshots: 📸
+![Home page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/homePage.png)
+![search feld page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/searchFeld.png)
+![Loading page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/loadingPage.png)
+![Weather Infos page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/weatherInfos.png)
+![Error page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/error1.png)
+![Error2 page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/error2.png)
 
 ## License: 📄
 MIT License
