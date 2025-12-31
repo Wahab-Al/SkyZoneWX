@@ -44,6 +44,7 @@ Receive detailed weather information instantly.
 
 ## Screenshots: 📸
 ![Home page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/homePage.png)
+![Mobile View](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/340b86ae96a4c016d18ae2f33e10d2a353ba7717/public/img/screenshots/mobileView.png)
 ![search feld page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/searchFeld.png)
 ![Loading page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/loadingPage.png)
 ![Weather Infos page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/weatherInfos.png)
