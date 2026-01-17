@@ -16,6 +16,12 @@
         <title>SkyZoneWX</title>
     </head>
     <body>
+      <div class="video-container">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="../public/img/ra3d.mp4" type="video/mp4">
+            </video>
+        <div class="overlay"></div>
+      </div>
         <header><h1>{{>header}}</h1></header>
         <div class="container mt-5">
           {{#if error}}
@@ -34,7 +40,7 @@
                 height="64" /></h3></div>
 
               <div class="locationInfos">
-                <div class="h-25 m-auto mb-2 d-flex align-items-center shadow  text-light"><p class="mb-0">📍<span class="infoSpan">Country/City:</span> {{cityName}}</p></div>
+                <div class="h-25 m-auto mb-2 d-flex align-items-center shadow  text-light"><p class="mb-0 cityFeld">📍<span class="infoSpan">Country/City:</span> {{cityName}}</p></div>
                 <div class="h-25 m-auto mb-2 d-flex align-items-center shadow  text-light"><p class="mb-0">🌐<span class="infoSpan">Latitude:</span> {{latitude}}</p></div>
                 <div class="h-25 m-auto mb-2 d-flex align-items-center shadow  text-light"><p class="mb-0">🌐<span class="infoSpan">Longitude:</span> {{longitude}}</p></div>
                 <div class="h-25 m-auto mb-2 d-flex align-items-center shadow  text-light"><p class="mb-0">🌡️<span class="infoSpan">Temperature:</span> {{temperatureCelsius}}</p></div>

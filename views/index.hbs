@@ -16,6 +16,12 @@
         <title>SkyZoneWX</title>
     </head>
     <body>
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="../public/img/sky.mp4" type="video/mp4">
+            </video>
+        <div class="overlay"></div>
+        </div>
         <header><h1>{{>header}}</h1></header>
         <div class="container windowsContainer mt-5 mb-5">
             {{#if error}}
