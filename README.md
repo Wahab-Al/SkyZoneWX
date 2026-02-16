@@ -19,7 +19,7 @@ is a Node.js project that allows users to get current weather information for an
 ## Quick Start with Docker Hub: 🐳📦
 docker pull wahab7/sky_zone_wx:v1 
 #### ***Note: to run this project instantly without local setting, use following command:***
-  docker run -p 5000:5000 -e WEATHER_KEY=YOUR WEATHER_KEY -e MAPBOX_TOKEN=YOUR_MAPBOX_TOKEN wahab7/sky_zone_wx:v1
+  docker run -p 5000:5000 -e WEATHER_KEY=YOUR WEATHER_KEY -e MAPBOX_TOKEN=YOUR_MAPBOX_TOKEN wahab7/sky_zone_wx:latest
 
 
 ## Features: ✨
