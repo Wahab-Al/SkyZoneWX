@@ -1,5 +1,5 @@
-# SkyZoneWX: 🌤️🌍
-is a Node.js project that allows users to get current weather information for any country or city they enter.
+# SkyZoneWX:
+A server-side rendered weather app that chains two external APIs Mapbox for geocoding and WeatherAPI for real-time conditions.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -12,41 +12,105 @@ is a Node.js project that allows users to get current weather information for an
 [![SweetAlert2](https://img.shields.io/badge/SweetAlert2-JS%20popup%20library-purple?style=flat-square)](https://sweetalert2.github.io/)
 [![Docker](https://img.shields.io/badge/Docker-Container%20Platform-blue?style=flat-square&logo=docker)](https://www.docker.com/)
 
+**[Live Demo →](https://skyzonewx.onrender.com/)**
 
-## Live Demo 🚀
-#### [🌐Explore Live Site](https://skyzonewx.onrender.com/)
+---
 
-## Quick Start with Docker Hub: 🐳📦
-docker pull wahab7/sky_zone_wx:v1 
-#### ***Note: to run this project instantly without local setting, use following command:***
-  docker run -p 5000:5000 -e WEATHER_KEY=YOUR WEATHER_KEY -e MAPBOX_TOKEN=YOUR_MAPBOX_TOKEN 
-  
+## The Problem
+
+Two API calls need to be chained: first geocode the location, then fetch the weather for those coordinates.
+
+---
+
+## The Solution
+
+The server acts as a secure proxy. The browser never sees the API keys it submits a city name, the Express server geocodes it via Mapbox, passes the coordinates to WeatherAPI, and renders the result server-side with Handlebars before sending HTML back to the client.
+
+```
+Browser (city name input)
+    │
+    ▼
+Express server
+    ├─→ Mapbox API (geocoding: city name → lat/lng + display name)
+    └─→ WeatherAPI (weather data for those coordinates)
+    │
+    ▼
+Handlebars renders the result → HTML response to browser
+```
+
+No API keys in the client. No separate frontend build step.
+
+---
+
+## Architecture
+
+```
+.
+├── src/
+│   └── app.js            # Server entry Express setup, routes, API calls
+├── views/                # Handlebars page templates
+├── partials/             # Reusable HBS partials (header, footer, etc.)
+├── public/               # Static assets (CSS, images)
+├── dockerfile            # Container definition
+└── .dockerignore
+```
+
+Handlebars was chosen over a React frontend specifically to keep rendering server-side, simpler deployment, no build step, and the API proxy pattern works naturally without needing a separate backend endpoint.
+
+---
+
+## Tech Decisions
+
+| Decision | Why |
+|---|---|
+| **Server-side rendering** over client-side SPA | Keeps API keys off the browser entirely, no separate backend needed |
+| **Handlebars** over EJS | Cleaner separation between logic and templates; partials system works well for shared layout |
+| **Mapbox** for geocoding | More reliable city-name resolution than relying on WeatherAPI's location search alone |
+| **Axios** over fetch | Consistent error handling and response parsing in Node.js without extra polyfills |
+| **Docker** | Makes deployment environment-agnostic, anyone can run the app with a single command using their own API keys |
+
+---
+
+## Run with Docker
+
+No local setup needed — just Docker and your API keys:
+
+```bash
+docker pull wahab7/sky_zone_wx:latest
+
+docker run -p 5000:5000 \
+  -e WEATHER_KEY=your_weatherapi_key \
+  -e MAPBOX_TOKEN=your_mapbox_token \
   wahab7/sky_zone_wx:latest
+```
 
+Then open `http://localhost:5000`.
 
-## Features: ✨
-Users can input a city or country and receive real-time weather data.
-Weather data is fetched from WeatherAPI.com.
-Location data is enhanced with Mapbox.com.
-Built using Node.js, Express, and Handlebars (HBS) for the frontend rendering.
-Simple, clean, and responsive UI for easy user interaction.
+---
 
-## Tech Stack: 🛠️
+## Local Setup
 
-#### Backend: ⚡
-Node.js + Express
+```bash
+git clone https://github.com/Wahab-Al/SkyZoneWX.git
+cd SkyZoneWX
+npm install
+```
 
-#### Frontend: 🖌️
-Handlebars (HBS)
+Create a `.env` file:
+```env
+WEATHER_KEY=your_weatherapi_key
+MAPBOX_TOKEN=your_mapbox_token
+PORT=5000
+```
 
-### APIs: 
-WeatherAPI.com, Mapbox.com
+```bash
+node src/app.js
+```
 
-## Usage: 🚀
-Enter a city or country in the search bar.
-Receive detailed weather information instantly.
+---
 
-## Screenshots: 📸
+## Screenshots
+
 ![Home page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/homePage.png)
 ![Mobile View](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/340b86ae96a4c016d18ae2f33e10d2a353ba7717/public/img/screenshots/mobileView.png)
 ![search feld page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/searchFeld.png)
@@ -55,17 +119,8 @@ Receive detailed weather information instantly.
 ![Error page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/error1.png)
 ![Error2 page](https://raw.githubusercontent.com/Wahab-Al/SkyZoneWX/99a2c99aac63cf256a219278dfd5915610681624/public/img/screenshots/error2.png)
 
-## License: 📄
-MIT License
+---
 
-## Installation: 💾
-```bash
-git clone https://github.com/Wahab-Al/SkyZoneWX.git
+## License
 
-## Navigate to the project directory: 📂
-cd SkyZoneWX
-
-## Run the application: ▶️
-npm install
-
-node src/app.js
+MIT
